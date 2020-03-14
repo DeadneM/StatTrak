@@ -28,9 +28,9 @@ function StatTrak:update_screen()
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_headshots" then --StatTrak headshots
 			if managers.statistics._global.killed_by_weapon[v.id] and managers.statistics._global.killed_by_weapon[v.id].headshots then
-				text = "" .. managers.statistics._global.killed_by_weapon[v.id].headshots
+				text = "¤" .. managers.statistics._global.killed_by_weapon[v.id].headshots
 			else
-				text = "0"
+				text = "¤0"
 			end
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_acc" then --StatTrak accuracy
@@ -53,9 +53,9 @@ function StatTrak:update_screen()
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_headshots" then --Session headshots
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].headshots then
-				text = "" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots
+				text = "¤" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots
 			else
-				text = "0"
+				text = "¤0"
 			end
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_hs_per_kills" then --Session headshots/kills
@@ -67,7 +67,7 @@ function StatTrak:update_screen()
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].count then
 				kills = managers.statistics._global.session.killed_by_weapon[v.id].count
 			end
-			text = "" .. hs .. "/" .. kills
+			text = "¤" .. hs .. "/" .. kills
 			color = self.colors.session
 			font_size = 350
 		elseif self.used_modes[self.mode] == "se_acc" then --Session accuracy
@@ -80,15 +80,15 @@ function StatTrak:update_screen()
 			color = self.colors.session		
 		elseif self.used_modes[self.mode] == "se_down" then --Downs
 			local downs = managers.statistics._global.session.downed.bleed_out + managers.statistics._global.session.downed.incapacitated
-			text = "" .. downs
+			text = "!" .. downs
 			color = self.colors.misc
 		elseif self.used_modes[self.mode] == "se_obj" then --Objectives completed
 			local all_objs = managers.objectives:total_objectives(Global.level_data and Global.level_data.level_id)
 			local objs = managers.statistics._global.session.objectives.count
 			if all_objs == 0 then
-				text = 	" " .. objs
+				text = 	"[" .. objs .. "]"
 			else
-				text = 	" " .. objs .. "/" .. all_objs
+				text = 	"[" .. objs .. "]" .. " / " .. all_objs
 			end
 			color = self.colors.misc
 		elseif self.used_modes[self.mode] == "se_dmg" then --Damage dealt

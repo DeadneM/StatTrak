@@ -7,9 +7,9 @@ StatTrak.colors = {
 	stattrak = Color(0.32,0.38,0.35),
 	session = Color(0.45, 0.38, 0.18),
 	modes = Color(0.5, 0.5, 0.5),
-	bg = Color(0.015,0.03,0.045),
+	bg = Color(0,0,0),
 	err = Color(0.5,0,0),
-	misc = Color(0,0.2,0)
+	misc = Color(0.45,0.25,0.35)
 }
 StatTrak.used_modes = {}
 function StatTrak:Save()

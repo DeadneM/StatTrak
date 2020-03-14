@@ -89,7 +89,6 @@
 			<value_node value="wpn_fps_smg_coal"/>
 			<value_node value="wpn_fps_saw"/>
 			<value_node value="wpn_fps_saw_secondary"/>
-			<value_node value="wpn_fps_bow_predator_pts"/>
 		</weapons>
     </WeaponMod>
 	<WeaponMod based_on="wpn_fps_upg_i_autofire" id="wpn_fps_trk_pis_stattrak" unit="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak" type="stattrak" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">

@@ -1,9 +1,6 @@
 _G.StatTrak = _G.StatTrak or {}
 local stattrak_guis = {}
 
-
-
-
 function StatTrak:update_screen()
 	for k, v in pairs(stattrak_guis) do	
 		v.ws:panel():set_alpha(self._data.stattrak_brightness)
