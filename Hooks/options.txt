@@ -1,0 +1,143 @@
+{
+	"menu_id" : "stattrak",
+	"parent_menu_id" : "blt_options",
+	"title" : "menu_stattrak",
+	"description" : "menu_stattrak_desc",
+	"back_callback" : "stattrak_save",
+	"localized" :  true
+	"items" : [
+		{
+			"type" : "keybind",
+			"id" : "stattrak_change_mode",
+			"title" : "stattrak_change_mode",
+			"description" : "stattrak_change_mode_desc",
+			"keybind_id" : "stattrak_change_mode",
+			"func" : "stattrak_change_mode",
+			"run_in_game" : true,
+			"localized" :  true
+		},
+		{
+			"type" : "slider",
+			"id" : "stattrak_brightness",
+			"title" : "stattrak_brightness",
+			"description" : "stattrak_brightness_desc",
+			"callback" : "stattrak_brightness",
+			"value" : "stattrak_brightness",
+			"default_value" : 1,
+			"max" : 1.5,
+			"min" : 0.5,
+			"step" : 0.05
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_st_kills",
+			"title" : "stattrak_mode_st_kills_menu",
+			"description" : "stattrak_mode_st_kills_menu_desc",
+			"callback" : "stattrak_mode_st_kills",
+			"value" : "mode_st_kills",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_st_headshots",
+			"title" : "stattrak_mode_st_headshots_menu",
+			"description" : "stattrak_mode_st_headshots_menu_desc",
+			"callback" : "stattrak_mode_st_headshots",
+			"value" : "mode_st_headshots",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_st_acc",
+			"title" : "stattrak_mode_st_acc_menu",
+			"description" : "stattrak_mode_st_acc_menu_desc",
+			"callback" : "stattrak_mode_st_acc",
+			"value" : "mode_st_acc",
+			"default_value" : true
+		},
+		{
+			"type" : "divider",
+			"size" : 8
+		},		
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_kills",
+			"title" : "stattrak_mode_se_kills_menu",
+			"description" : "stattrak_mode_se_kills_menu_desc",
+			"callback" : "stattrak_mode_se_kills",
+			"value" : "mode_se_kills",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_headshots",
+			"title" : "stattrak_mode_se_headshots_menu",
+			"description" : "stattrak_mode_se_headshots_menu_desc",
+			"callback" : "stattrak_mode_se_headshots",
+			"value" : "mode_se_headshots",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_hs_per_kills",
+			"title" : "stattrak_mode_se_hs_per_kills_menu",
+			"description" : "stattrak_mode_se_hs_per_kills_menu_desc",
+			"callback" : "stattrak_mode_se_hs_per_kills",
+			"value" : "mode_se_hs_per_kills",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_acc",
+			"title" : "stattrak_mode_se_acc_menu",
+			"description" : "stattrak_mode_se_acc_menu_desc",
+			"callback" : "stattrak_mode_se_acc",
+			"value" : "mode_se_acc",
+			"default_value" : true
+		},
+		{
+			"type" : "divider",
+			"size" : 8
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_range_finder",
+			"title" : "stattrak_mode_range_finder_menu",
+			"description" : "stattrak_mode_range_finder_menu_desc",
+			"callback" : "stattrak_mode_range_finder",
+			"value" : "mode_range_finder",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_down",
+			"title" : "stattrak_mode_se_down_menu",
+			"description" : "stattrak_mode_se_down_menu_desc",
+			"callback" : "stattrak_mode_se_down",
+			"value" : "mode_se_down",
+			"default_value" : true
+		},		
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_obj",
+			"title" : "stattrak_mode_se_obj_menu",
+			"description" : "stattrak_mode_se_obj_menu_desc",
+			"callback" : "stattrak_mode_se_obj",
+			"value" : "mode_se_obj",
+			"default_value" : true
+		},
+		{
+			"type" : "toggle",
+			"id" : "stattrak_mode_se_dmg",
+			"title" : "stattrak_mode_se_dmg_menu",
+			"description" : "stattrak_mode_se_dmg_menu_desc",
+			"callback" : "stattrak_mode_se_dmg",
+			"value" : "mode_se_dmg",
+			"default_value" : true
+		}
+	]
+}
