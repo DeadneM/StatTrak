@@ -27,8 +27,7 @@ stattrak_pos ={
 			wpn_fps_pis_rage = {pos = Vector3(-2500,-100, -0.32), rot = Rotation(-90,-74,0)},
 			wpn_fps_pis_usp = {pos = Vector3(-1200,-900, -1.65), rot = Rotation(-90,-90,0)},
 			wpn_fps_pis_g22c = {pos = Vector3(-1200,-750, -1.33), rot = Rotation(-90,-90,0)},
-		--	wpn_fps_pis_judge = {pos = Vector3(-2350,190, -0.23), rot = Rotation(-90,-90,0)},
-			wpn_fps_pis_judge = {pos = Vector3(-2200, -600, -0.80), rot = Rotation(-90,-90,0)},
+			wpn_fps_pis_judge = {pos = Vector3(-2350,600, -0.23), rot = Rotation(-90,-90,0)},
 			wpn_fps_smg_m45 = {pos = Vector3(-3720, -200, -0.92), rot = Rotation(-90,-90,0)},
 			wpn_fps_ass_s552 = {pos = Vector3(-2400, -870, -3.1), rot = Rotation(-90,-118,0)},
 			wpn_fps_pis_ppk = {pos = Vector3(-1500,-900, -1.41), rot = Rotation(-90,-90,0)},
@@ -114,9 +113,7 @@ stattrak_pos ={
 			wpn_fps_saw = {pos = Vector3(-5900,-1800, -2.74), rot = Rotation(-86,-90,0)},
 			wpn_fps_saw_secondary = {pos = Vector3(-5900,-1800, -2.74), rot = Rotation(-86,-90,0)},
 			wpn_fps_pis_chinchilla = {pos = Vector3(-1070,-300, -0.22), rot = Rotation(-90,-90,0)},
-			wpn_fps_pis_x_chinchilla = {pos = Vector3(-1070,-300, -0.22), rot = Rotation(-90,-90,0)},
-			wpn_fps_bow_predator_pts = {pos = Vector3(-200,-1500, 2.16), rot = Rotation(-84,-90,0)},
-			wpn_fps_bow_predator_pts_mxsecondary = {pos = Vector3(-200,-1500, 2.16), rot = Rotation(-84,-90,0)}			
+			wpn_fps_pis_x_chinchilla = {pos = Vector3(-1070,-300, -0.22), rot = Rotation(-90,-90,0)}		
 }
 Hooks:PostHook( WeaponFactoryTweakData, "init", "StatTrakInit", function(self)
 	self.parts.wpn_fps_trk_stattrak.stats = {
@@ -134,10 +131,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "StatTrakInit", function(self)
 		}
 	self.parts.wpn_fps_trk_rev_stattrak.perks = nil
 	self.parts.wpn_fps_trk_rev_stattrak.stance_mod = nil
-	
 	--self.parts.wpn_fps_trk_rev_stattrak.adds = {"wpn_fps_pis_chinchilla_b_satan"}
 	--self.parts.wpn_fps_trk_rev_stattrak.depends_on = "barrel"
 	self.parts.wpn_fps_pis_chinchilla_b_standard.forbids = {"wpn_fps_trk_rev_stattrak"}
-
-
 end )

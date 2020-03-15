@@ -6,8 +6,6 @@ StatTrak.mode = 1
 StatTrak.distance = 0
 StatTrak.force_text = nil
 
-
-
 function StatTrak:update_screen()
 	if not stattrak_guis then return end
 	for k, v in pairs(stattrak_guis) do		
@@ -28,9 +26,9 @@ function StatTrak:update_screen()
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_headshots" then --StatTrak headshots
 			if managers.statistics._global.killed_by_weapon[v.id] and managers.statistics._global.killed_by_weapon[v.id].headshots then
-				text = "¤" .. managers.statistics._global.killed_by_weapon[v.id].headshots
+				text = "°" .. managers.statistics._global.killed_by_weapon[v.id].headshots
 			else
-				text = "¤0"
+				text = "°0"
 			end
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_acc" then --StatTrak accuracy
@@ -53,9 +51,9 @@ function StatTrak:update_screen()
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_headshots" then --Session headshots
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].headshots then
-				text = "¤" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots
+				text = "°" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots
 			else
-				text = "¤0"
+				text = "°0"
 			end
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_hs_per_kills" then --Session headshots/kills
@@ -67,7 +65,7 @@ function StatTrak:update_screen()
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].count then
 				kills = managers.statistics._global.session.killed_by_weapon[v.id].count
 			end
-			text = "¤" .. hs .. "/" .. kills
+			text = "°" .. hs .. "/" .. kills
 			color = self.colors.session
 			font_size = 350
 		elseif self.used_modes[self.mode] == "se_acc" then --Session accuracy
@@ -149,7 +147,12 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	_gui_script.gui_text:set_align("center")
 	_gui_script.gui_text:set_color(StatTrak.colors.stattrak)
 	_gui_script.gui_text:set_text("StatTrak")
-	_gui_script.gui_text:set_visible(true)	
+	_gui_script.gui_text:set_visible(true)
+	_gui_script.background:set_w(_gui_script.gui_text:parent():w())
+	_gui_script.background:set_h(_gui_script.gui_text:parent():h())
+	_gui_script.background:set_center_x(_gui_script.gui_text:parent():w()/2)
+	_gui_script.background:set_center_y(_gui_script.gui_text:parent():h()/2)
+	_gui_script.background:set_align("center")
 	_gui_script.background:set_color(StatTrak.colors.bg)
 	_gui_script.background:set_visible(true)
 	StatTrak:update_screen()
