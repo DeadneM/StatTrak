@@ -17,12 +17,12 @@ StatTrak.modes = {
 	"se_dmg"
 }
 StatTrak.colors = {
-	stattrak = Color(0.32,0.38,0.35),
-	session = Color(0.45, 0.38, 0.18),
 	modes = Color(0.5, 0.5, 0.5),
-	bg = Color(0.015,0.03,0.045),
-	err = Color(0.5,0,0),
-	misc = Color(0,0.2,0)
+	stattrak = Color(0.4, 0.3, 0.6),
+	session = Color(0.5, 0.4, 0.2),
+	misc = Color(0.6, 0.2, 0.15),
+	bg = Color(0, 0, 0),
+	err = Color(1, 0, 0)
 }
 StatTrak.used_modes = {}
 function StatTrak:Save()

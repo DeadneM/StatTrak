@@ -139,7 +139,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	local _gui_script = _gui:script()	
 	_gui_script.gui_text:set_render_template(Idstring("Text"))
 	_gui_script.indicator:set_visible(false)
-	_gui_script.gui_text:set_font_size(300)	
+	_gui_script.gui_text:set_font_size(300)
 	_gui_script.gui_text:set_w(_gui_script.gui_text:parent():w())
 	_gui_script.gui_text:set_h(_gui_script.gui_text:parent():h())
 	_gui_script.gui_text:set_center_x(_gui_script.gui_text:parent():w()/2)
