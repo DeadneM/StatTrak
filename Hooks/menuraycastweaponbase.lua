@@ -8,7 +8,7 @@ function StatTrak:update_screen()
 end
 
 Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assemble_completed" , function(self)
-	PrintTable(self._parts)
+	--PrintTable(self._parts)
 	if not self._parts or (not self._parts["wpn_fps_trk_stattrak"] and not self._parts["wpn_fps_trk_pis_stattrak"] and not self._parts["wpn_fps_trk_rev_stattrak"]) then
 		if stattrak_guis[self._factory_id] then
 			stattrak_guis[self._factory_id].gui:hide()
@@ -61,10 +61,10 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	end
 	_gui_script.gui_text:set_text(text)
 	_gui_script.gui_text:set_visible(true)
-	_gui_script.background:set_w(_gui_script.gui_text:parent():w())
-	_gui_script.background:set_h(_gui_script.gui_text:parent():h())
-	_gui_script.background:set_center_x(_gui_script.gui_text:parent():w()/2)
-	_gui_script.background:set_center_y(_gui_script.gui_text:parent():h()/2)
+	_gui_script.background:set_w(_gui_script.background:parent():w())
+	_gui_script.background:set_h(_gui_script.background:parent():h())
+	_gui_script.background:set_center_x(_gui_script.background:parent():w()/2)
+	_gui_script.background:set_center_y(_gui_script.background:parent():h()/2)
 	_gui_script.background:set_align("center")
 	_gui_script.background:set_color(StatTrak.colors.bg)
 	_gui_script.background:set_visible(true)
