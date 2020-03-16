@@ -4,7 +4,7 @@
 	"title" : "menu_stattrak",
 	"description" : "menu_stattrak_desc",
 	"back_callback" : "stattrak_save",
-	"localized" :  true
+	"localized" : true,
 	"items" : [
 		{
 			"type" : "keybind",
@@ -14,7 +14,6 @@
 			"keybind_id" : "stattrak_change_mode",
 			"func" : "stattrak_change_mode",
 			"run_in_game" : true,
-			"run_in_menu" : true,
 			"localized" :  true
 		},
 		{

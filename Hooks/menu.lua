@@ -1,8 +1,21 @@
 _G.StatTrak = _G.StatTrak or {}
 StatTrak._path = ModPath
+StatTrak._menu_file = StatTrak._path .. "Hooks/options.txt"
 StatTrak._data_path = SavePath .. "StatTrak_options.txt"
 StatTrak._data = {}
-StatTrak.modes = {"st_kills", "st_headshots",  "st_acc",  "se_kills", "se_headshots", "se_hs_per_kills", "se_acc","range_finder","se_down", "se_obj", "se_dmg"}
+StatTrak.modes = {
+	"st_kills",
+	"st_headshots",
+	"st_acc",
+	"se_kills",
+	"se_headshots",
+	"se_hs_per_kills",
+	"se_acc",
+	"range_finder",
+	"se_down",
+	"se_obj",
+	"se_dmg"
+}
 StatTrak.colors = {
 	stattrak = Color(0.32,0.38,0.35),
 	session = Color(0.45, 0.38, 0.18),
@@ -123,5 +136,5 @@ Hooks:Add("MenuManagerInitialize", "StatTrak_MenuManagerInitialize", function(me
 		end
 	end
 	StatTrak:Load()
-	MenuHelper:LoadFromJsonFile(StatTrak._path .. "Hooks/options.txt", StatTrak, StatTrak._data)
+	MenuHelper:LoadFromJsonFile(StatTrak._menu_file, StatTrak, StatTrak._data)
 end )
