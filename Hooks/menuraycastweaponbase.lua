@@ -2,14 +2,14 @@ _G.StatTrak = _G.StatTrak or {}
 local stattrak_guis = {}
 
 function StatTrak:update_screen()
-	for k, v in pairs(stattrak_guis) do	
+	if not stattrak_guis then return end
+	for k, v in pairs(stattrak_guis) do
 		v.ws:panel():set_alpha(self._data.stattrak_brightness)
 	end
 end
-
 Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assemble_completed" , function(self)
 	--PrintTable(self._parts)
-	if not self._parts or (not self._parts["wpn_fps_trk_stattrak"] and not self._parts["wpn_fps_trk_pis_stattrak"] and not self._parts["wpn_fps_trk_rev_stattrak"]) then
+	if not self._parts or (not self._parts["wpn_fps_trk_stattrak"] and not self._parts["wpn_fps_trk_pis_stattrak"]) then
 		if stattrak_guis[self._factory_id] then
 			stattrak_guis[self._factory_id].gui:hide()
 		end
@@ -17,13 +17,10 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	end
 	local gui = World:newgui()
 	local part = nil
-	
 	if self._parts["wpn_fps_trk_stattrak"] then
 		part = self._parts["wpn_fps_trk_stattrak"]
 	elseif self._parts["wpn_fps_trk_pis_stattrak"] then
 		part = self._parts["wpn_fps_trk_pis_stattrak"]
-	elseif self._parts["wpn_fps_trk_rev_stattrak"] then
-		part = self._parts["wpn_fps_trk_rev_stattrak"]
 	end
 	if not part.unit then return end
 	local s_pos = Vector3(0,0,0)
@@ -68,6 +65,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	-- _gui_script.background:set_align("center")
 	_gui_script.background:set_color(StatTrak.colors.bg)
 	_gui_script.background:set_visible(true)
+	StatTrak:update_screen()
 end )
 Hooks:PostHook( NewRaycastWeaponBase , "_update_stats_values" , "change_wpn_parts" , function(self)
 	local parts = self._parts

@@ -8,7 +8,7 @@ StatTrak.force_text = nil
 
 function StatTrak:update_screen()
 	if not stattrak_guis then return end
-	for k, v in pairs(stattrak_guis) do		
+	for k, v in pairs(stattrak_guis) do
 		local text = "ERROR"
 		local color = self.colors.err
 		local font_size = 400
@@ -17,7 +17,6 @@ function StatTrak:update_screen()
 			color = self.colors.modes
 			font_size = 250
 		elseif self.used_modes[self.mode] == "st_kills" then --StatTrak kills
-			--log(tostring(managers.statistics._global.killed_by_weapon["predator_bow"]))
 			if managers.statistics._global.killed_by_weapon[v.id] and managers.statistics._global.killed_by_weapon[v.id].count then
 				text = managers.statistics._global.killed_by_weapon[v.id].count
 			else
@@ -51,9 +50,9 @@ function StatTrak:update_screen()
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_headshots" then --Session headshots
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].headshots then
-				text = "°" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots
+				text = "°" .. managers.statistics._global.session.killed_by_weapon[v.id].headshots .. "°"
 			else
-				text = "°0"
+				text = "°0°"
 			end
 			color = self.colors.session
 		elseif self.used_modes[self.mode] == "se_hs_per_kills" then --Session headshots/kills
@@ -65,7 +64,7 @@ function StatTrak:update_screen()
 			if managers.statistics._global.session.killed_by_weapon[v.id] and managers.statistics._global.session.killed_by_weapon[v.id].count then
 				kills = managers.statistics._global.session.killed_by_weapon[v.id].count
 			end
-			text = "°" .. hs .. "/" .. kills
+			text = "°" .. hs .. "°" .. "/" .. kills
 			color = self.colors.session
 			font_size = 350
 		elseif self.used_modes[self.mode] == "se_acc" then --Session accuracy
@@ -78,7 +77,7 @@ function StatTrak:update_screen()
 			color = self.colors.session		
 		elseif self.used_modes[self.mode] == "se_down" then --Downs
 			local downs = managers.statistics._global.session.downed.bleed_out + managers.statistics._global.session.downed.incapacitated
-			text = "!" .. downs
+			text = "!" .. downs .. "!"
 			color = self.colors.misc
 		elseif self.used_modes[self.mode] == "se_obj" then --Objectives completed
 			local all_objs = managers.objectives:total_objectives(Global.level_data and Global.level_data.level_id)
@@ -89,6 +88,7 @@ function StatTrak:update_screen()
 				text = 	"[" .. objs .. "]" .. " / " .. all_objs
 			end
 			color = self.colors.misc
+			font_size = 350
 		elseif self.used_modes[self.mode] == "se_dmg" then --Damage dealt
 			text =  math.round(managers.statistics._global.session.damage_dealt and managers.statistics._global.session.damage_dealt[k] or 0)
 			color = self.colors.misc
@@ -103,7 +103,7 @@ function StatTrak:update_screen()
 end
 Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone" , function(self, factory_id, blueprint, skip_queue, clbk)
 	--log(factory_id)
-	if not self._parts["wpn_fps_trk_stattrak"] and not self._parts["wpn_fps_trk_pis_stattrak"] and not self._parts["wpn_fps_trk_rev_stattrak"] then return end
+	if not self._parts or (not self._parts["wpn_fps_trk_stattrak"] and not self._parts["wpn_fps_trk_pis_stattrak"]) then return end
 	if string.match(self._factory_id, "npc") then return end
 	local s_pos = Vector3(0,0,0)
 	local s_rot = Rotation(0,0,0)
@@ -117,8 +117,6 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 		part = self._parts["wpn_fps_trk_stattrak"]
 	elseif self._parts["wpn_fps_trk_pis_stattrak"] then
 		part = self._parts["wpn_fps_trk_pis_stattrak"]
-	elseif self._parts["wpn_fps_trk_rev_stattrak"] then
-		part = self._parts["wpn_fps_trk_rev_stattrak"]
 	end
 	if not part or not part.unit then return end
 	local obj = part.unit:get_object(Idstring("g_gfx_lens"))
