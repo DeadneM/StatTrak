@@ -1,4 +1,7 @@
-<table name="stattrak">
+<table name="StatTrak" image="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_trk_stattrak" color="Color(0.2, 0.1, 0.8)">
+	<AssetUpdates id="StatTrak" version="1">
+        <custom_provider version_api_url="https://raw.githubusercontent.com/DeadneM/StatTrak/master/Version.txt" download_url="https://github.com/DeadneM/StatTrak/archive/master.zip"/>
+    </AssetUpdates>
     <Localization directory="Localization" default="english.txt"/>
     <GlobalValue id="stattrak" color="Color(1, 0.5, 0)"/>
     <WeaponMod based_on="wpn_fps_upg_i_autofire" id="wpn_fps_trk_stattrak" unit="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak" type="stattrak" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
