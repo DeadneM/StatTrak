@@ -154,7 +154,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	-- _gui_script.background:set_center_y(_gui_script.background:parent():h()/2)
 	-- _gui_script.background:set_align("center")
 	_gui_script.background:set_color(StatTrak.colors.bg)
-	_gui_script.background:set_visible(false)
+	_gui_script.background:set_visible(true)
 	StatTrak:update_screen()
 end )
 Hooks:PostHook( NewRaycastWeaponBase , "set_scope_range_distance" , "StatTrak_set_scope_range_distance" , function(self, distance)

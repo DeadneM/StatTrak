@@ -67,7 +67,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	-- _gui_script.background:set_center_y(_gui_script.background:parent():h()/2)
 	-- _gui_script.background:set_align("center")
 	_gui_script.background:set_color(StatTrak.colors.bg)
-	_gui_script.background:set_visible(false)
+	_gui_script.background:set_visible(true)
 end )
 Hooks:PostHook( NewRaycastWeaponBase , "_update_stats_values" , "change_wpn_parts" , function(self)
 	local parts = self._parts

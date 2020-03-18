@@ -115,23 +115,13 @@ stattrak_pos ={
 			wpn_fps_pis_chinchilla = {pos = Vector3(-1070,-300, -0.22), rot = Rotation(-90,-90,0)},
 			wpn_fps_pis_x_chinchilla = {pos = Vector3(-1070,-300, -0.22), rot = Rotation(-90,-90,0)}		
 }
-Hooks:PostHook( WeaponFactoryTweakData, "init", "StatTrakInit", function(self)
-	self.parts.wpn_fps_trk_stattrak.stats = {
-			value = 1
-		}
+Hooks:PostHook(WeaponFactoryTweakData, "init", "StatTrakInit", function(self)
+--All
+	self.parts.wpn_fps_trk_stattrak.stats = {value = 1}
 	self.parts.wpn_fps_trk_stattrak.perks = nil
 	self.parts.wpn_fps_trk_stattrak.stance_mod = nil
-	self.parts.wpn_fps_trk_pis_stattrak.stats = {
-			value = 1
-		}
+--Pistol
+	self.parts.wpn_fps_trk_pis_stattrak.stats = {value = 1}
 	self.parts.wpn_fps_trk_pis_stattrak.perks = nil
 	self.parts.wpn_fps_trk_pis_stattrak.stance_mod = nil
-	self.parts.wpn_fps_trk_rev_stattrak.stats = {
-			value = 1
-		}
-	self.parts.wpn_fps_trk_rev_stattrak.perks = nil
-	self.parts.wpn_fps_trk_rev_stattrak.stance_mod = nil
-	--self.parts.wpn_fps_trk_rev_stattrak.adds = {"wpn_fps_pis_chinchilla_b_satan"}
-	--self.parts.wpn_fps_trk_rev_stattrak.depends_on = "barrel"
-	self.parts.wpn_fps_pis_chinchilla_b_standard.forbids = {"wpn_fps_trk_rev_stattrak"}
-end )
+end)
