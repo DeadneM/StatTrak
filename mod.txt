@@ -1,35 +1,27 @@
 {
- "name" : "StatTrak",
- "description" : "Adds a CS:GO like StatTrak attachment to the game.",
- "author" : "bergdavi",
- "contact" : "",
- "version" : "7.0",
- "priority" : 46,
- "blt_version" : 2,
- "hooks": [
+	"name" : "StatTrak",
+	"description" : "Adds a CS:GO like StatTrak attachment to the game.",
+	"author" : "bergdavi",
+	"contact" : "",
+	"version" : "7.0",
+	"priority" : 46,
+	"blt_version" : 2,
+	"hooks": [
+		{ "hook_id" : "lib/managers/menumanager", "script_path" : "Hooks/menu.lua" },
+		{ "hook_id" : "lib/tweak_data/weaponfactorytweakdata", "script_path" : "Hooks/weaponfactorytweakdata.lua" },
+		{ "hook_id" : "lib/units/weapons/newraycastweaponbase", "script_path" : "Hooks/stattrak.lua" },
+		{ "hook_id" : "lib/managers/statisticsmanager", "script_path" : "Hooks/statisticsmanager.lua" },
+		{ "hook_id" : "lib/units/weapons/menuraycastweaponbase", "script_path" : "Hooks/menuraycastweaponbase.lua" },
+		{ "hook_id" : "lib/units/enemies/cop/copdamage", "script_path" : "Hooks/copdamage.lua" }
+	],
+	"keybinds": [
 		{
-			"hook_id": "lib/managers/menumanager",
-			"script_path": "Hooks/menu.lua"
-		},
-		{
-			"hook_id": "lib/tweak_data/weaponfactorytweakdata",
-			"script_path": "Hooks/weaponfactorytweakdata.lua"
-		},
-		{
-			"hook_id": "lib/units/weapons/newraycastweaponbase",
-			"script_path": "Hooks/stattrak.lua"
-		},
-		{
-			"hook_id": "lib/managers/statisticsmanager",
-			"script_path": "Hooks/statisticsmanager.lua"
-		},
-		{
-			"hook_id": "lib/units/weapons/menuraycastweaponbase",
-			"script_path": "Hooks/menuraycastweaponbase.lua"
-		},
-		{
-			"hook_id": "lib/units/enemies/cop/copdamage",
-			"script_path": "Hooks/copdamage.lua"
+			"keybind_id": "stattrak_change_mode",
+			"name": "stattrak_change_mode",
+			"description": "stattrak_change_mode_desc",
+			"script_path" : "Hooks/stattrak_keybind.lua",
+			"run_in_game": true,
+			"localized" : true
 		}
 	]
 }
