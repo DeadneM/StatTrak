@@ -16,7 +16,7 @@
     "st_mode_range_finder" : "Range\nFinder",	
     "st_mode_se_kills" : "Session\nKills",	
     "st_mode_se_headshots" : "Session\nHeadshots",	
-	"st_mode_se_hs_per_kills" : "Session\nKills/",
+	"st_mode_se_hs_per_kills" : "Session\nHeadshots/Kills",
     "st_mode_se_acc" : "Session\nAccuracy",
     "st_mode_se_down" : "Downed",
     "st_mode_se_obj" : "Objectives\nCompleted",

@@ -108,7 +108,7 @@ Hooks:Add("MenuManagerInitialize", "StatTrak_MenuManagerInitialize", function(me
 	MenuCallbackHandler.stattrak_mode_se_dmg = function(self, item)
 		StatTrak._data.mode_se_dmg = (item:value() == "on" and true or false)
 	end	
-	MenuCallbackHandler.stattrak_change_mode = function(self)
+	MenuCallbackHandler.stattrak_change_mode = function(self, item)
 		if Utils:IsInHeist() then
 			StatTrak.mode = StatTrak.mode + 1
 			if StatTrak.mode > #StatTrak.used_modes then

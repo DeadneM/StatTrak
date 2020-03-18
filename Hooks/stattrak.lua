@@ -11,7 +11,7 @@ function StatTrak:update_screen()
 	for k, v in pairs(stattrak_guis) do
 		local text = "ERROR"
 		local color = self.colors.err
-		local font_size = 400
+		local font_size = 350
 		if self.force_text then		
 			text = self.force_text
 			color = self.colors.modes
@@ -25,9 +25,9 @@ function StatTrak:update_screen()
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_headshots" then --StatTrak headshots
 			if managers.statistics._global.killed_by_weapon[v.id] and managers.statistics._global.killed_by_weapon[v.id].headshots then
-				text = "°" .. managers.statistics._global.killed_by_weapon[v.id].headshots
+				text = "°" .. managers.statistics._global.killed_by_weapon[v.id].headshots .. "°"
 			else
-				text = "°0"
+				text = "°0°"
 			end
 			color = self.colors.stattrak
 		elseif self.used_modes[self.mode] == "st_acc" then --StatTrak accuracy
@@ -66,7 +66,6 @@ function StatTrak:update_screen()
 			end
 			text = "°" .. hs .. "°" .. "/" .. kills
 			color = self.colors.session
-			font_size = 350
 		elseif self.used_modes[self.mode] == "se_acc" then --Session accuracy
 			if managers.statistics._global.session.shots_by_weapon[v.id] then
 				local shots = managers.statistics._global.session.shots_by_weapon[v.id]
@@ -88,7 +87,6 @@ function StatTrak:update_screen()
 				text = 	"[" .. objs .. "]" .. " / " .. all_objs
 			end
 			color = self.colors.misc
-			font_size = 350
 		elseif self.used_modes[self.mode] == "se_dmg" then --Damage dealt
 			text =  math.round(managers.statistics._global.session.damage_dealt and managers.statistics._global.session.damage_dealt[k] or 0)
 			color = self.colors.misc
