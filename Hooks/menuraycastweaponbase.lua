@@ -45,8 +45,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	local _gui_script = _gui:script()
 	_gui_script.indicator:set_visible(false)
 	--Background--
-		--"opacity_add" or
-		--"normal"
+		--"opacity_add" or --"normal"
 	_gui_script.background:set_blend_mode("opacity_add")
 		--Rounded effect="VertexColorTexturedPatterns" or
 		--Rect opaque="OverlayVertexColorTextured" or
@@ -60,7 +59,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	_gui_script.background:set_color(StatTrak.colors.bg)
 	_gui_script.background:set_visible(true)
 	--Text--
-		-- "opacity_add" or "normal"
+		-- "opacity_add" or --"normal"
 	_gui_script.gui_text:set_blend_mode("opacity_add")
 	_gui_script.gui_text:set_render_template(Idstring("Text"))
 	_gui_script.gui_text:set_font_size(300)
@@ -76,7 +75,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	end
 	_gui_script.gui_text:set_text(text)
 	_gui_script.gui_text:set_visible(true)
-	-- StatTrak:update_screen()
+	StatTrak:update_screen()
 end )
 Hooks:PostHook( NewRaycastWeaponBase , "_update_stats_values" , "change_wpn_parts" , function(self)
 	local parts = self._parts

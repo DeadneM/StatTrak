@@ -15,7 +15,7 @@ function StatTrak:update_screen()
 		if self.force_text then		
 			text = self.force_text
 			color = self.colors.modes
-			font_size = 250
+			font_size = 200
 		elseif self.used_modes[self.mode] == "st_kills" then --StatTrak kills
 			if managers.statistics._global.killed_by_weapon[v.id] and managers.statistics._global.killed_by_weapon[v.id].count then
 				text = managers.statistics._global.killed_by_weapon[v.id].count
@@ -91,7 +91,7 @@ function StatTrak:update_screen()
 			text =  math.round(managers.statistics._global.session.damage_dealt and managers.statistics._global.session.damage_dealt[k] or 0)
 			color = self.colors.misc
 		end
-		--v.ws:panel():set_alpha(self._data.stattrak_brightness)
+		v.ws:panel():set_alpha(self._data.stattrak_brightness)
 		for _, gui in pairs(v.guis) do
 			gui:script().gui_text:set_text(text)
 			gui:script().gui_text:set_font_size(font_size)
@@ -138,8 +138,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	_gui_script.gui_text:set_blend_mode("opacity_add")
 	_gui_script.indicator:set_visible(false)
 	--Background--
-		--"opacity_add" or
-		--"normal"
+		--"opacity_add" or --"normal"
 	_gui_script.background:set_blend_mode("opacity_add")
 		--Rounded effect="VertexColorTexturedPatterns" or
 		--Rect opaque="OverlayVertexColorTextured" or
@@ -153,7 +152,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	_gui_script.background:set_color(StatTrak.colors.bg)
 	_gui_script.background:set_visible(true)
 	--Text--
-		-- "opacity_add" or "normal"
+		-- "opacity_add" or --"normal"
 	_gui_script.gui_text:set_blend_mode("opacity_add")
 	_gui_script.gui_text:set_render_template(Idstring("Text"))
 	_gui_script.gui_text:set_font_size(300)
