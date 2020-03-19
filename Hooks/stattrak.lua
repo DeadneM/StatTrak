@@ -91,7 +91,7 @@ function StatTrak:update_screen()
 			text =  math.round(managers.statistics._global.session.damage_dealt and managers.statistics._global.session.damage_dealt[k] or 0)
 			color = self.colors.misc
 		end
-		v.ws:panel():set_alpha(self._data.stattrak_brightness)
+		--v.ws:panel():set_alpha(self._data.stattrak_brightness)
 		for _, gui in pairs(v.guis) do
 			gui:script().gui_text:set_text(text)
 			gui:script().gui_text:set_font_size(font_size)
@@ -134,7 +134,28 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	end
 	local _gui_script = _gui:script()	
 	_gui_script.gui_text:set_render_template(Idstring("Text"))
+		-- "opacity_add" or "normal"
+	_gui_script.gui_text:set_blend_mode("opacity_add")
 	_gui_script.indicator:set_visible(false)
+	--Background--
+		--"opacity_add" or
+		--"normal"
+	_gui_script.background:set_blend_mode("opacity_add")
+		--Rounded effect="VertexColorTexturedPatterns" or
+		--Rect opaque="OverlayVertexColorTextured" or
+		--Rect transp="VertexColorTextured"
+	_gui_script.background:set_render_template(Idstring("VertexColorTextured"))
+	_gui_script.background:set_w(_gui_script.background:parent():w())
+	_gui_script.background:set_h(_gui_script.background:parent():h())
+	_gui_script.background:set_center_x(_gui_script.background:parent():w()/2)
+	_gui_script.background:set_center_y(_gui_script.background:parent():h()/2)
+	_gui_script.background:set_align("center")
+	_gui_script.background:set_color(StatTrak.colors.bg)
+	_gui_script.background:set_visible(true)
+	--Text--
+		-- "opacity_add" or "normal"
+	_gui_script.gui_text:set_blend_mode("opacity_add")
+	_gui_script.gui_text:set_render_template(Idstring("Text"))
 	_gui_script.gui_text:set_font_size(300)
 	_gui_script.gui_text:set_w(_gui_script.gui_text:parent():w())
 	_gui_script.gui_text:set_h(_gui_script.gui_text:parent():h())
@@ -142,16 +163,8 @@ Hooks:PostHook( NewRaycastWeaponBase , "assemble_from_blueprint" , "assemblydone
 	_gui_script.gui_text:set_center_y(_gui_script.gui_text:parent():h()/2)
 	_gui_script.gui_text:set_align("center")
 	_gui_script.gui_text:set_color(StatTrak.colors.stattrak)
-	_gui_script.gui_text:set_text("StatTrak")
+	_gui_script.gui_text:set_text(StatTrak)
 	_gui_script.gui_text:set_visible(true)
-	_gui_script.background:set_w(_gui_script.background:parent():w())
-	_gui_script.background:set_h(_gui_script.background:parent():h())
-	_gui_script.background:set_center_x(_gui_script.background:parent():w()/2)
-	_gui_script.background:set_center_y(_gui_script.background:parent():h()/2)
-	_gui_script.background:set_align("center")
-	_gui_script.background:set_render_template(Idstring("VertexColorTextured"))
-	_gui_script.background:set_color(StatTrak.colors.bg)
-	_gui_script.background:set_visible(true)
 	StatTrak:update_screen()
 end )
 Hooks:PostHook( NewRaycastWeaponBase , "set_scope_range_distance" , "StatTrak_set_scope_range_distance" , function(self, distance)

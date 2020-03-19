@@ -30,7 +30,7 @@
 		},
 		{
 			"type" : "divider",
-			"size" : 32
+			"size" : 16
 		},
 		{
 			"type" : "toggle",
