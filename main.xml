@@ -146,7 +146,6 @@
 		<texture path="units/mods/weapons/wpn_fps_trk_stattrak/textures/wpn_eotech_glass_op"/>
 	<!-- Pistol -->
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_trk_pis_stattrak"/>
-		<cooked_physics path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
 		<unit_mat_cc path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_pis_stattrak/textures/wpn_fps_trk_pis_stattrak_df"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_pis_stattrak/textures/wpn_fps_trk_pis_stattrak_df_cc"/>
