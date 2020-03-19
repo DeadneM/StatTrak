@@ -10,6 +10,8 @@
 			<value_node value="wpn_fps_ass_amcar"/>
 			<value_node value="wpn_fps_ass_m16"/>
 			<value_node value="wpn_fps_ass_m4"/>
+			<value_node value="wpn_fps_ass_aug"/>
+			<value_node value="wpn_fps_ass_corgi"/>
 			<value_node value="wpn_fps_smg_akmsu"/>
 			<value_node value="wpn_fps_ass_74"/>
 			<value_node value="wpn_fps_ass_akm"/>
@@ -18,6 +20,8 @@
 			<value_node value="wpn_fps_ass_g36"/>
 			<value_node value="wpn_fps_smg_p90"/>
 			<value_node value="wpn_fps_ass_m14"/>
+			<value_node value="wpn_fps_ass_ching"/>
+			<value_node value="wpn_fps_ass_komodo"/>
 			<value_node value="wpn_fps_smg_mp9"/>
 			<value_node value="wpn_fps_smg_mp5"/>
 			<value_node value="wpn_fps_smg_mac10"/>
@@ -79,6 +83,7 @@
 			<value_node value="wpn_fps_smg_schakal"/>
 			<value_node value="wpn_fps_snp_desertfox"/>
 			<value_node value="wpn_fps_sho_rota"/>
+			<value_node value="wpn_fps_shot_saiga"/>
 			<value_node value="wpn_fps_gre_arbiter"/>
 			<value_node value="wpn_fps_ass_contraband"/>
 			<value_node value="wpn_fps_gre_ray"/>
@@ -92,13 +97,12 @@
     </WeaponMod>
 	<WeaponMod based_on="wpn_fps_upg_i_autofire" id="wpn_fps_trk_pis_stattrak" unit="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak" type="stattrak" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
 		<weapons>
-			<value_node value="wpn_fps_shot_saiga"/>
 			<value_node value="wpn_fps_pis_g18c"/>
-			<value_node value="wpn_fps_ass_aug"/>
 			<value_node value="wpn_fps_pis_deagle"/>
 			<value_node value="wpn_fps_pis_1911"/>
 			<value_node value="wpn_fps_pis_g17"/>
 			<value_node value="wpn_fps_pis_beretta"/>
+			<value_node value="wpn_fps_pis_beer"/>
 			<value_node value="wpn_fps_pis_rage"/>
 			<value_node value="wpn_fps_pis_usp"/>
 			<value_node value="wpn_fps_pis_g22c"/>
@@ -121,6 +125,11 @@
 			<value_node value="wpn_fps_pis_sparrow"/>
 			<value_node value="wpn_fps_pis_pl14"/>
 			<value_node value="wpn_fps_pis_packrat"/>
+			<value_node value="wpn_fps_pis_legacy"/>
+			<value_node value="wpn_fps_pis_breech"/>
+			<value_node value="wpn_fps_pis_shrew"/>
+			<value_node value="wpn_fps_pis_czech"/>
+			<value_node value="wpn_fps_pis_stech"/>
 			<value_node value="wpn_fps_x_packrat"/>
 			<value_node value="wpn_fps_pis_lemming"/>
 			<value_node value="wpn_fps_pis_chinchilla"/>
