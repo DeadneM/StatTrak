@@ -96,6 +96,7 @@ function StatTrak:update_screen()
 			gui:script().gui_text:set_text(text)
 			gui:script().gui_text:set_font_size(font_size)
 			gui:script().gui_text:set_color(color)
+			gui:script().background:set_alpha(self._data.stattrak_brightness*255/100)
 		end
 	end
 end

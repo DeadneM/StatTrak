@@ -5,6 +5,7 @@ function StatTrak:update_screen()
 	if not stattrak_guis then return end
 	for k, v in pairs(stattrak_guis) do
 		v.ws:panel():set_alpha(self._data.stattrak_brightness)
+		v.gui:script().background:set_alpha(self._data.stattrak_brightness*255/100)
 	end
 end
 Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assemble_completed" , function(self)
