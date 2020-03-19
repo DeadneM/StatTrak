@@ -139,28 +139,15 @@
 	<AddFiles directory="assets">
 	<!-- ALl -->
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_trk_stattrak"/>
-		<cooked_physics path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
-		<model path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
-		<object path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
-		<unit path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak_cc"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak_cc_thq"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak_thq"/>
+		<unit_mat_cc path="units/mods/weapons/wpn_fps_trk_stattrak/wpn_fps_trk_stattrak"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_stattrak/textures/wpn_fps_trk_stattrak_df"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_stattrak/textures/wpn_fps_trk_stattrak_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_stattrak/textures/wpn_fps_trk_stattrak_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_stattrak/textures/wpn_eotech_glass_op"/>
 	<!-- Pistol -->
-		<cooked_physics path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
-		<model path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
-		<object path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
-		<unit path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak_cc"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak_cc_thq"/>
-		<material_config path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak_thq"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_trk_pis_stattrak"/>
+		<cooked_physics path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
+		<unit_mat_cc path="units/mods/weapons/wpn_fps_trk_pis_stattrak/wpn_fps_trk_pis_stattrak"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_pis_stattrak/textures/wpn_fps_trk_pis_stattrak_df"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_pis_stattrak/textures/wpn_fps_trk_pis_stattrak_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_trk_pis_stattrak/textures/wpn_fps_trk_pis_stattrak_nm"/>
