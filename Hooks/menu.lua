@@ -44,6 +44,7 @@ function StatTrak:Load()
 		self._data = json.decode( file:read("*all") )
 		file:close()
 		if self._data.stattrak_brightness == nil then self._data.stattrak_brightness = 1 end
+		if self._data.stattrak_brightness == nil then self._data.stattrak_brightness_screen = 1 end
 		if self._data.mode_st_kills == nil then self._data.mode_st_kills = true end
 		if self._data.mode_st_headshots == nil then self._data.mode_st_headshots = true end
 		if self._data.mode_st_acc == nil then self._data.mode_st_acc = true end
@@ -68,46 +69,52 @@ end
 Hooks:Add("MenuManagerInitialize", "StatTrak_MenuManagerInitialize", function(menu_manager)
 	MenuCallbackHandler.stattrak_save = function(self, item)
 		StatTrak:Save()
-	end	
+	end
 	MenuCallbackHandler.stattrak_brightness = function(self, item)
 		StatTrak._data.stattrak_brightness = item:value()
 		if StatTrak.update_screen then
 			StatTrak:update_screen()
 		end
-	end	
+	end
+	MenuCallbackHandler.stattrak_brightness_screen = function(self, item)
+		StatTrak._data.stattrak_brightness_screen = item:value()
+		if StatTrak.update_screen then
+			StatTrak:update_screen()
+		end
+	end
 	MenuCallbackHandler.stattrak_mode_st_kills = function(self, item)
 		StatTrak._data.mode_st_kills = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_st_headshots = function(self, item)
 		StatTrak._data.mode_st_headshots = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_st_acc = function(self, item)
 		StatTrak._data.mode_st_acc = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_range_finder = function(self, item)
 		StatTrak._data.mode_range_finder = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_kills = function(self, item)
 		StatTrak._data.mode_se_kills = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_headshots = function(self, item)
 		StatTrak._data.mode_se_headshots = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_hs_per_kills = function(self, item)
 		StatTrak._data.mode_se_hs_per_kills = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_acc = function(self, item)
 		StatTrak._data.mode_se_acc = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_down = function(self, item)
 		StatTrak._data.mode_se_down = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_mode_se_obj = function(self, item)
 		StatTrak._data.mode_se_obj = (item:value() == "on" and true or false)
 	end
 	MenuCallbackHandler.stattrak_mode_se_dmg = function(self, item)
 		StatTrak._data.mode_se_dmg = (item:value() == "on" and true or false)
-	end	
+	end
 	MenuCallbackHandler.stattrak_change_mode = function(self, item)
 	--Do nothing as we set the keybind in mod.txt for folder structure
 	end

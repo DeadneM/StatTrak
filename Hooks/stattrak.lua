@@ -91,12 +91,12 @@ function StatTrak:update_screen()
 			text =  math.round(managers.statistics._global.session.damage_dealt and managers.statistics._global.session.damage_dealt[k] or 0)
 			color = self.colors.misc
 		end
-		v.ws:panel():set_alpha(self._data.stattrak_brightness)
 		for _, gui in pairs(v.guis) do
 			gui:script().gui_text:set_text(text)
 			gui:script().gui_text:set_font_size(font_size)
 			gui:script().gui_text:set_color(color)
-			gui:script().background:set_alpha(self._data.stattrak_brightness*255/100)
+			gui:script().gui_text:set_alpha(self._data.stattrak_brightness)
+			gui:script().background:set_alpha(self._data.stattrak_brightness_screen)
 		end
 	end
 end
