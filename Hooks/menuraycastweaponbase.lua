@@ -23,7 +23,7 @@ Hooks:PostHook( NewRaycastWeaponBase , "_assemble_completed" , "StatTrak_assembl
 	elseif self._parts["wpn_fps_trk_pis_stattrak"] then
 		part = self._parts["wpn_fps_trk_pis_stattrak"]
 	end
-	if not part.unit then return end
+	if not part or not part.unit then return end
 	local s_pos = Vector3(0,0,0)
 	local s_rot = Rotation(0,0,0)
 	if stattrak_pos and stattrak_pos[self._factory_id] then
